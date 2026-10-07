@@ -1723,3 +1723,373 @@
     padding:0 8px;
   }
 }
+
+/* ===== Robot automation V3 ===== */
+/* ===== Robot automation preview extension ===== */
+#yc-smartfactory-app #package .pkg h3{font-weight:700!important}
+#yc-smartfactory-app #pkg-8{overflow:visible}
+#yc-smartfactory-app #pkg-8 .robot-apps{
+  grid-column:1/-1;
+  border-top:1px solid var(--line);
+  background:#fff;
+  padding:42px 42px 38px;
+}
+#yc-smartfactory-app .robot-apps-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:24px;
+}
+#yc-smartfactory-app .robot-kicker{
+  display:block;
+  margin-bottom:8px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+  letter-spacing:.14em;
+  color:var(--yc);
+}
+#yc-smartfactory-app .robot-apps-head h4{
+  margin:0;
+  font-size:25px;
+  line-height:1.28;
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+#yc-smartfactory-app .robot-apps-head p{
+  margin:10px 0 0;
+  max-width:720px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+}
+#yc-smartfactory-app .robot-guide-link{
+  flex:none;
+  color:var(--yc);
+  font-size:12px;
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,0,204,.28);
+  padding-bottom:3px;
+}
+#yc-smartfactory-app .robot-app-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+#yc-smartfactory-app .robot-app-card{
+  min-width:0;
+  border:1px solid #e3e5eb;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fbfbfc;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+#yc-smartfactory-app .robot-app-card:hover{
+  transform:translateY(-2px);
+  border-color:#cfd2dc;
+  box-shadow:0 14px 28px rgba(20,24,38,.06);
+}
+#yc-smartfactory-app .robot-media{
+  position:relative;
+  display:block;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#111;
+}
+#yc-smartfactory-app .robot-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
+}
+#yc-smartfactory-app .robot-app-card:hover .robot-media img{transform:scale(1.025)}
+#yc-smartfactory-app .robot-media:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.28));
+  pointer-events:none;
+}
+#yc-smartfactory-app .robot-play{
+  position:absolute;
+  left:16px;
+  bottom:14px;
+  z-index:2;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  color:var(--yc);
+  font-size:12px;
+  padding-left:2px;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+}
+#yc-smartfactory-app .robot-media-label{
+  position:absolute;
+  left:16px;
+  bottom:14px;
+  z-index:2;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:7px 10px;
+  backdrop-filter:blur(6px);
+}
+#yc-smartfactory-app .robot-media-generic img{
+  filter:saturate(.75) contrast(1.05);
+}
+#yc-smartfactory-app .robot-media-generic.cutting img{object-position:52% 50%}
+#yc-smartfactory-app .robot-media-generic.painting img{object-position:68% 45%}
+#yc-smartfactory-app .robot-media-generic.polishing img{object-position:34% 50%}
+#yc-smartfactory-app .robot-app-body{padding:18px 18px 17px}
+#yc-smartfactory-app .robot-num{
+  display:block;
+  margin-bottom:8px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+  color:var(--yc);
+}
+#yc-smartfactory-app .robot-app-body h5, #yc-smartfactory-app .robot-cta-card h5{
+  margin:0 0 8px;
+  font-size:17px;
+  line-height:1.35;
+  font-weight:700;
+}
+#yc-smartfactory-app .robot-app-body p{
+  min-height:66px;
+  margin:0 0 15px;
+  color:#60646b;
+  font-size:12px;
+  line-height:1.55;
+}
+#yc-smartfactory-app .robot-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+#yc-smartfactory-app .robot-links a{
+  color:#3f434a;
+  background:#fff;
+  border:1px solid #e2e4ea;
+  border-radius:999px;
+  padding:6px 8px;
+  font-size:10px;
+  line-height:1;
+  text-decoration:none;
+}
+#yc-smartfactory-app .robot-links a:hover{
+  color:var(--yc);
+  border-color:rgba(0,0,204,.3);
+}
+#yc-smartfactory-app .robot-cta-card{
+  padding:24px;
+  min-height:100%;
+  background:var(--yc);
+  border-color:var(--yc);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:30px;
+}
+#yc-smartfactory-app .robot-cta-card:hover{border-color:var(--yc)}
+#yc-smartfactory-app .robot-cta-card .robot-num{color:rgba(255,255,255,.72)}
+#yc-smartfactory-app .robot-cta-kicker{
+  display:block;
+  margin-bottom:10px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  color:rgba(255,255,255,.66);
+}
+#yc-smartfactory-app .robot-cta-card h5{
+  font-size:22px;
+  color:#fff;
+}
+#yc-smartfactory-app .robot-cta-card p{
+  margin:0;
+  color:rgba(255,255,255,.78);
+  font-size:12px;
+  line-height:1.6;
+}
+#yc-smartfactory-app .robot-cta-btn{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.22);
+  font-size:12px;
+  font-weight:700;
+}
+#yc-smartfactory-app .robot-common-links{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px 14px;
+  margin-top:18px;
+  padding-top:17px;
+  border-top:1px solid var(--line);
+}
+#yc-smartfactory-app .robot-common-links>span{
+  font-weight:700;
+  font-size:11px;
+}
+#yc-smartfactory-app .robot-common-links a{
+  color:#666b73;
+  font-size:11px;
+  text-decoration:none;
+}
+#yc-smartfactory-app .robot-common-links a:hover{color:var(--yc)}
+#yc-smartfactory-app #pkg-8 .robot-form-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+@media(max-width:980px){
+  #yc-smartfactory-app .robot-app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  #yc-smartfactory-app #pkg-8 .robot-apps{padding:30px 20px 26px}
+  #yc-smartfactory-app .robot-apps-head{display:block}
+  #yc-smartfactory-app .robot-guide-link{display:inline-block;margin-top:14px}
+  #yc-smartfactory-app .robot-app-grid{grid-template-columns:1fr}
+  #yc-smartfactory-app .robot-app-body p{min-height:0}
+}
+
+
+/* ===== Robot automation preview V2 refinements ===== */
+
+/* 로봇 탭에서 확장 섹션 때문에 외곽 라운드가 잘려 보이지 않도록 처리 */
+#yc-smartfactory-app #package #pkg-panels{
+  overflow:visible!important;
+}
+#yc-smartfactory-app #package #pkg-8{
+  overflow:hidden!important;
+  border-radius:22px!important;
+}
+#yc-smartfactory-app #package #pkg-8 .robot-apps{
+  border-radius:0 0 22px 22px;
+  overflow:hidden;
+}
+
+/* 카드 본문 구조 */
+#yc-smartfactory-app #pkg-8 .robot-app-body{
+  padding:18px 18px 18px;
+}
+#yc-smartfactory-app #pkg-8 .robot-app-body h5{
+  margin:0;
+  font-size:17px;
+  line-height:1.35;
+  font-weight:700;
+}
+#yc-smartfactory-app #pkg-8 .robot-app-body p{
+  margin:9px 0 0;
+  min-height:58px;
+  color:#60646b;
+  font-size:12px;
+  line-height:1.58;
+}
+
+/* 제목/설명과 액션 영역 사이를 라인으로 분리 */
+#yc-smartfactory-app #pkg-8 .robot-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+  margin-top:16px;
+  padding-top:15px;
+  border-top:1px solid #e5e7ec;
+}
+#yc-smartfactory-app #pkg-8 .robot-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:8px 10px;
+  color:#30343a;
+  background:#fff;
+  border:1px solid #d8dbe3;
+  border-radius:8px;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.2;
+  text-align:center;
+  text-decoration:none;
+  transition:border-color .2s ease,color .2s ease,background .2s ease,transform .2s ease;
+}
+#yc-smartfactory-app #pkg-8 .robot-links a:hover{
+  color:#0000cc;
+  border-color:#0000cc;
+  background:#f7f7ff;
+  transform:translateY(-1px);
+}
+
+/* 버튼 2개뿐인 카드 */
+#yc-smartfactory-app #pkg-8 .robot-links:has(a:nth-child(2):last-child){
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+/* 공통 기술자료를 버튼형으로 */
+#yc-smartfactory-app #pkg-8 .robot-common-links{
+  display:grid;
+  grid-template-columns:auto repeat(3,minmax(0,1fr));
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+#yc-smartfactory-app #pkg-8 .robot-common-links>span{
+  padding-right:6px;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+#yc-smartfactory-app #pkg-8 .robot-common-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:9px 12px;
+  color:#353940;
+  background:#fff;
+  border:1px solid #d8dbe3;
+  border-radius:9px;
+  font-size:10px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+}
+#yc-smartfactory-app #pkg-8 .robot-common-links a:hover{
+  color:#0000cc;
+  border-color:#0000cc;
+  background:#f7f7ff;
+}
+
+/* 모바일 */
+@media(max-width:700px){
+  #yc-smartfactory-app #package #pkg-8{
+    border-radius:18px!important;
+  }
+  #yc-smartfactory-app #package #pkg-8 .robot-apps{
+    border-radius:0 0 18px 18px;
+  }
+  #yc-smartfactory-app #pkg-8 .robot-links{
+    grid-template-columns:1fr!important;
+  }
+  #yc-smartfactory-app #pkg-8 .robot-common-links{
+    grid-template-columns:1fr;
+    align-items:stretch;
+  }
+  #yc-smartfactory-app #pkg-8 .robot-common-links>span{
+    padding-right:0;
+  }
+}
