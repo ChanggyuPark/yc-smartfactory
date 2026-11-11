@@ -237,6 +237,7 @@
       addCleanup(() => addressSearchBtn.removeEventListener('click', addressHandler));
     }
 
+    let leadEventTracked = false;
     const submitHandler = async (e) => {
       e.preventDefault();
 
@@ -305,6 +306,16 @@
         });
 
         if (!response.ok) throw new Error('Webhook request failed: ' + response.status);
+
+        // Record a Meta Lead only after the form API confirms a successful response.
+        if (!leadEventTracked && typeof window.fbq === 'function') {
+          leadEventTracked = true;
+          try {
+            window.fbq('track', 'Lead', { content_name: 'Smart Factory 상담 신청' });
+          } catch (trackingError) {
+            console.warn('Meta Lead tracking failed:', trackingError);
+          }
+        }
 
         openSuccess();
 
